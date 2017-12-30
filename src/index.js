@@ -64,6 +64,7 @@ class SerialTemperature {
       this.log('Converted Fahrenheit temperature to celsius: ' + value);
     }
      */
+    value = value * -1 * -1;
     this.recent_value = value;
   }
 
