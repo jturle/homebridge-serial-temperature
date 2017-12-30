@@ -58,13 +58,12 @@ class SerialTemperature {
 
   setValue(value) {
     this.log('Read Temperature Value: ' + value);
-    /*
     if (this.units === FAHRENHEIT_UNITS) {
       value = (value - 32) / 1.8;
       this.log('Converted Fahrenheit temperature to celsius: ' + value);
+    } else {
+      value = value * -1 * -1;
     }
-     */
-    value = value * -1 * -1;
     this.recent_value = value;
   }
 
