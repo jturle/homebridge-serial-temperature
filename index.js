@@ -147,13 +147,14 @@ var SerialTemperature = function () {
   return SerialTemperature;
 }();
 
+var initializer = function initializer(log, config) {
+  return new SerialTemperature(log, config);
+};
 //export const SerialTemperature = new SerialTemperature;
-
-
 var classTest = exports.classTest = SerialTemperature;
 
 exports.default = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory("homebridge-serial-temperature", "SerialTemperature", SerialTemperature);
+  homebridge.registerAccessory("homebridge-serial-temperature", "SerialTemperature", initializer);
 };

@@ -1,4 +1,5 @@
 import SerialPort from 'serialport';
+
 const parsers = SerialPort.parsers;
 
 let Service, Characteristic;
@@ -55,8 +56,7 @@ class SerialTemperature {
     parser.on('data', this.setValue.bind(this));
   }
 
-  setValue(value)
-  {
+  setValue(value) {
     this.log('Read Temperature Value: ' + value);
     if (this.units === FAHRENHEIT_UNITS) {
       value = (value - 32) / 1.8;
@@ -123,10 +123,13 @@ class SerialTemperature {
   }
 }
 
+const initializer = (log, config) => {
+  return new SerialTemperature(log, config);
+}
 //export const SerialTemperature = new SerialTemperature;
 export const classTest = SerialTemperature;
 export default (homebridge) => {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory("homebridge-serial-temperature", "SerialTemperature", SerialTemperature);
+  homebridge.registerAccessory("homebridge-serial-temperature", "SerialTemperature", initializer);
 }
