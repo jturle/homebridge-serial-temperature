@@ -128,7 +128,7 @@ const initializer = (log, config) => {
 }
 //export const SerialTemperature = new SerialTemperature;
 export const classTest = SerialTemperature;
-export default (homebridge) => {
+modules.export = (homebridge) => {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
   homebridge.registerAccessory("homebridge-serial-temperature", "SerialTemperature", initializer);
