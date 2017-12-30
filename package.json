@@ -1,0 +1,40 @@
+{
+  "name": "homebridge-serial-temperature",
+  "version": "0.1.0",
+  "description": "serial plugin for homebridge supporting temperature sensors",
+  "license": "ISC",
+  "scripts": {
+    "build": "babel src --out-dir=./",
+    "start": "babel -w src --out-dir=./"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "serial",
+    "temperature sensor"
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": {
+    "name": "@jturle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jturle/homebridge-serial-temperature.git"
+  },
+  "dependencies": {
+    "serialport": "^6.0.4"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": []
+  }
+}
